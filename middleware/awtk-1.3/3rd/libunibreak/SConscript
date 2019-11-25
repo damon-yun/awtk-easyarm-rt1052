@@ -1,0 +1,20 @@
+import os
+import platform
+
+env=DefaultEnvironment().Clone()
+LIB_DIR=os.environ['LIB_DIR'];
+BIN_DIR=os.environ['BIN_DIR'];
+
+SOURCES=[
+"graphemebreak.c",
+"linebreak.c",
+"linebreakdef.c",
+"unibreakbase.c",
+"unibreakdef.c",
+"wordbreak.c",
+"emojidef.c",
+"linebreakdata.c",
+]
+
+env.Library(os.path.join(LIB_DIR, 'linebreak'), SOURCES)
+
