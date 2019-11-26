@@ -104,9 +104,9 @@ extern int gui_app_start(int lcd_w, int lcd_h);
 
 
 
-#define master_task_PRIORITY (configMAX_PRIORITIES - 1)  //gui task
-#define slave_task_PRIORITY (configMAX_PRIORITIES - 2)   //led task
-#define touch_task_PRIORITY (configMAX_PRIORITIES - 3)   //touch task
+#define master_task_PRIORITY (configMAX_PRIORITIES - 2)  //gui task
+#define slave_task_PRIORITY (configMAX_PRIORITIES - 3)   //led task
+#define touch_task_PRIORITY (configMAX_PRIORITIES - 1)   //touch task
 
 /*******************************************************************************
  * Prototypes
@@ -362,7 +362,7 @@ static void gui_task(void *pvParameters)
 
     touch_semaphore = xSemaphoreCreateBinary();    
     
-    if (xTaskCreate(touch_update_task, "touch task", 128, NULL, touch_task_PRIORITY, NULL) != pdPASS)
+    if (xTaskCreate(touch_update_task, "touch task", 512, NULL, touch_task_PRIORITY, NULL) != pdPASS)
     {
         PRINTF("Failed to create touch task");
         while (1)
