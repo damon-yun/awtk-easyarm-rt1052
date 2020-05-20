@@ -293,12 +293,12 @@
         <SetRegEntry>
           <Number>0</Number>
           <Key>DLGUARM</Key>
-          <Name></Name>
+          <Name>d</Name>
         </SetRegEntry>
         <SetRegEntry>
           <Number>0</Number>
           <Key>JL2CM3</Key>
-          <Name>-U59401308 -O78 -S2 -ZTIFSpeedSel5000 -A0 -C0 -JU1 -JI127.0.0.1 -JP0 -RST1 -N00("ARM CoreSight SW-DP") -D00(0BD11477) -L00(0) -TO18 -TC10000000 -TP21 -TDS8007 -TDT0 -TDC1F -TIEFFFFFFFF -TIP8 -TB1 -TFE0 -FO3 -FD20000000 -FC8000 -FN1 -FF0EasyARM_RT1052_ISSI -FS060000000 -FL0800000</Name>
+          <Name>-U59401308 -O78 -S2 -ZTIFSpeedSel5000 -A0 -C0 -JU1 -JI127.0.0.1 -JP0 -RST1 -N00("ARM CoreSight SW-DP") -D00(0BD11477) -L00(0) -TO18 -TC10000000 -TP21 -TDS8007 -TDT0 -TDC1F -TIEFFFFFFFF -TIP8 -TB1 -TFE0 -FO3 -FD20000000 -FC8000 -FN1 -FF0EasyARM_RT1052_ISSI -FS060000000 -FL01000000</Name>
         </SetRegEntry>
         <SetRegEntry>
           <Number>0</Number>
@@ -315,9 +315,9 @@
         <Bp>
           <Number>0</Number>
           <Type>0</Type>
-          <LineNumber>335</LineNumber>
+          <LineNumber>291</LineNumber>
           <EnabledFlag>1</EnabledFlag>
-          <Address>1610903684</Address>
+          <Address>1610638070</Address>
           <ByteObject>0</ByteObject>
           <HtxType>0</HtxType>
           <ManyObjects>0</ManyObjects>
@@ -326,14 +326,14 @@
           <BreakIfRCount>1</BreakIfRCount>
           <Filename>..\awtk_gui_demo.c</Filename>
           <ExecCommand></ExecCommand>
-          <Expression>\\emwin_gui_demo\../awtk_gui_demo.c\335</Expression>
+          <Expression>\\emwin_gui_demo\../awtk_gui_demo.c\291</Expression>
         </Bp>
         <Bp>
           <Number>1</Number>
           <Type>0</Type>
-          <LineNumber>317</LineNumber>
+          <LineNumber>279</LineNumber>
           <EnabledFlag>1</EnabledFlag>
-          <Address>1610645154</Address>
+          <Address>1610638102</Address>
           <ByteObject>0</ByteObject>
           <HtxType>0</HtxType>
           <ManyObjects>0</ManyObjects>
@@ -342,7 +342,7 @@
           <BreakIfRCount>1</BreakIfRCount>
           <Filename>..\awtk_gui_demo.c</Filename>
           <ExecCommand></ExecCommand>
-          <Expression>\\emwin_gui_demo\../awtk_gui_demo.c\317</Expression>
+          <Expression>\\emwin_gui_demo\../awtk_gui_demo.c\279</Expression>
         </Bp>
       </Breakpoint>
       <Tracepoint>

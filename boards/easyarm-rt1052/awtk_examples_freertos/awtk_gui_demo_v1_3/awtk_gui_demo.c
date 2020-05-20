@@ -129,7 +129,7 @@ uint8_t *offline_fb_addr = (uint8_t*)s_frameBuffer[1];
 static ft5406_rt_handle_t touchHandle;
 static lpi2c_rtos_handle_t master_rtos_handle;
 static SemaphoreHandle_t touch_semaphore;
-
+static SemaphoreHandle_t lcd_fb_semaphore;
 /*******************************************************************************
  * Code
  ******************************************************************************/
@@ -268,6 +268,7 @@ void BOARD_InitLcdifPixelClock(void)
 void APP_LCDIF_IRQHandler(void)
 {
     uint32_t intStatus;
+    static BaseType_t reschedule;
 
     intStatus = ELCDIF_GetInterruptStatus(APP_ELCDIF);
 
@@ -275,13 +276,19 @@ void APP_LCDIF_IRQHandler(void)
 
     if (intStatus & kELCDIF_CurFrameDone)
     {
-        s_frameDone = true;
+        xSemaphoreGiveFromISR(lcd_fb_semaphore, &reschedule);
+        portYIELD_FROM_ISR(reschedule);
     }
 /* Add for ARM errata 838869, affects Cortex-M4, Cortex-M4F Store immediate overlapping
   exception return operation might vector to incorrect interrupt */
 #if defined __CORTEX_M && (__CORTEX_M == 4U)
     __DSB();
 #endif
+}
+
+void APP_ELCDIF_WaitDone(void)
+{
+    xSemaphoreTake(lcd_fb_semaphore, portMAX_DELAY);
 }
 
 void APP_ELCDIF_Init(void)
@@ -355,12 +362,16 @@ static void gui_task(void *pvParameters)
     BOARD_Touch_Init();
     BOARD_InitLcd();
     APP_ELCDIF_Init();
-
+    
+    BOARD_EnableLcdInterrupt();
+    NVIC_SetPriority(LCDIF_IRQn, 3);
     /* Clear the frame buffer. */
     memset(s_frameBuffer, 0, sizeof(s_frameBuffer));
+    ELCDIF_EnableInterrupts(APP_ELCDIF, kELCDIF_CurFrameDoneInterruptEnable);
     ELCDIF_RgbModeStart(APP_ELCDIF);
 
     touch_semaphore = xSemaphoreCreateBinary();    
+    lcd_fb_semaphore = xSemaphoreCreateBinary();    
     
     if (xTaskCreate(touch_update_task, "touch task", 512, NULL, touch_task_PRIORITY, NULL) != pdPASS)
     {

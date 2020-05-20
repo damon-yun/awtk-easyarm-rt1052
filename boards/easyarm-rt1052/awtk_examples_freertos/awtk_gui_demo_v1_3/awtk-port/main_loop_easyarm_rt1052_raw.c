@@ -35,6 +35,7 @@
 extern uint8_t *online_fb_addr;
 extern uint8_t *offline_fb_addr;
 
+extern void APP_ELCDIF_WaitDone(void);
 
 uint8_t platform_disaptch_input(main_loop_t* loop) {
 	int iX = 0;
@@ -44,8 +45,22 @@ uint8_t platform_disaptch_input(main_loop_t* loop) {
   return 0;
 }
 
+static ret_t lcd_fb_sync (lcd_t* lcd) {
+  
+    APP_ELCDIF_WaitDone();
+    
+    return RET_OK;
+}
+
 lcd_t* platform_create_lcd(wh_t w, wh_t h) {
-  return lcd_mem_bgr565_create_double_fb(w, h, online_fb_addr, offline_fb_addr);
+    
+  lcd_t* lcd = lcd_mem_bgr565_create_double_fb(w, h, online_fb_addr, offline_fb_addr);
+
+  if (lcd != NULL) {
+    lcd->sync = lcd_fb_sync;
+  }
+
+  return lcd;
 }
 
 
