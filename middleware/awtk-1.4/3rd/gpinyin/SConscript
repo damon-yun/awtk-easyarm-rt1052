@@ -1,0 +1,14 @@
+import os
+import platform
+
+env=DefaultEnvironment().Clone()
+LIB_DIR=os.environ['LIB_DIR'];
+BIN_DIR=os.environ['BIN_DIR'];
+
+env.Library(os.path.join(LIB_DIR, 'gpinyin'), Glob('src/*.cpp'))
+
+env1=DefaultEnvironment().Clone()
+env1['CCFLAGS'] = '-D___BUILD_MODEL___ ' + env['CCFLAGS'];
+env1.Program(os.path.join(BIN_DIR, 'gpinyingen'), ['tools/gpinyin_gen.cpp'] 
+  + Glob('tools/src/*.cpp'), LIBS=['gpinyin'])
+
