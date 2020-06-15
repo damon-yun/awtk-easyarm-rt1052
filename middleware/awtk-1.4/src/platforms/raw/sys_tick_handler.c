@@ -1,9 +1,9 @@
-﻿/**
+/**
  * File:   sys_tick.c
  * Author: AWTK Develop Team
  * Brief:  use sys tick to implement sleep/get_time_ms64.
  *
- * Copyright (c) 2018 - 2020  Guangzhou ZHIYUAN Electronics Co.,Ltd.
+ * Copyright (c) 2018 - 2019  Guangzhou ZHIYUAN Electronics Co.,Ltd.
  *
  * This program is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
