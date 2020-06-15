@@ -26,6 +26,8 @@
 
 #define LCD_WIDTH 480
 
+#define WITH_IME_PINYIN 1
+
 /**
  * 嵌入式系统有自己的main函数时，请定义本宏。
  *
@@ -62,12 +64,6 @@
  */
 #define WITH_BITMAP_BGR565 1
 
-/**
- * 如果不需输入法，请定义本宏
- *
- * 
- */
-#define WITH_NULL_IM 1
 
 /**
  * 如果有标准的 malloc/free/calloc 等函数，请定义本宏
