@@ -523,6 +523,16 @@
               <FileType>5</FileType>
               <FilePath>../../../../../devices/MIMXRT1052/drivers/fsl_gpio.h</FilePath>
             </File>
+            <File>
+              <FileName>fsl_cache.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\..\devices\MIMXRT1052\drivers\fsl_cache.c</FilePath>
+            </File>
+            <File>
+              <FileName>fsl_cache.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\..\..\devices\MIMXRT1052\drivers\fsl_cache.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -4233,6 +4243,11 @@
               <FileName>platform.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\awtk-port\platform.c</FilePath>
+            </File>
+            <File>
+              <FileName>mimxrt_g2d.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\awtk-port\mimxrt_g2d.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -5016,6 +5031,16 @@
               <FileType>5</FileType>
               <FilePath>../../../../../devices/MIMXRT1052/drivers/fsl_gpio.h</FilePath>
             </File>
+            <File>
+              <FileName>fsl_cache.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\..\devices\MIMXRT1052\drivers\fsl_cache.c</FilePath>
+            </File>
+            <File>
+              <FileName>fsl_cache.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\..\..\devices\MIMXRT1052\drivers\fsl_cache.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -8916,6 +8941,11 @@
               <FileType>1</FileType>
               <FilePath>..\awtk-port\platform.c</FilePath>
             </File>
+            <File>
+              <FileName>mimxrt_g2d.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\awtk-port\mimxrt_g2d.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -9645,6 +9675,16 @@
               <FileName>fsl_gpio.h</FileName>
               <FileType>5</FileType>
               <FilePath>../../../../../devices/MIMXRT1052/drivers/fsl_gpio.h</FilePath>
+            </File>
+            <File>
+              <FileName>fsl_cache.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\..\devices\MIMXRT1052\drivers\fsl_cache.c</FilePath>
+            </File>
+            <File>
+              <FileName>fsl_cache.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\..\..\devices\MIMXRT1052\drivers\fsl_cache.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -13356,6 +13396,11 @@
               <FileName>platform.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\awtk-port\platform.c</FilePath>
+            </File>
+            <File>
+              <FileName>mimxrt_g2d.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\awtk-port\mimxrt_g2d.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -14087,6 +14132,16 @@
               <FileType>5</FileType>
               <FilePath>../../../../../devices/MIMXRT1052/drivers/fsl_gpio.h</FilePath>
             </File>
+            <File>
+              <FileName>fsl_cache.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\..\..\..\..\devices\MIMXRT1052\drivers\fsl_cache.c</FilePath>
+            </File>
+            <File>
+              <FileName>fsl_cache.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\..\..\..\..\devices\MIMXRT1052\drivers\fsl_cache.h</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -17797,6 +17852,11 @@
               <FileName>platform.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\awtk-port\platform.c</FilePath>
+            </File>
+            <File>
+              <FileName>mimxrt_g2d.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\awtk-port\mimxrt_g2d.c</FilePath>
             </File>
           </Files>
         </Group>

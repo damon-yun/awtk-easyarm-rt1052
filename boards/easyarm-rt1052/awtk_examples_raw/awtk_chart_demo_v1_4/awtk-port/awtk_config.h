@@ -26,6 +26,8 @@
 
 #define LCD_WIDTH 480
 
+#define WITH_PXP_G2D  1
+
 /**
  * 嵌入式系统有自己的main函数时，请定义本宏。
  *
