@@ -286,9 +286,13 @@ void APP_LCDIF_IRQHandler(void)
 #endif
 }
 
-void APP_ELCDIF_WaitDone(void)
+void APP_ELCDIF_WaitDone(uint8_t *lcd)
 {
+    uint32_t next_buffer = (uint32_t)lcd;
     xSemaphoreTake(lcd_fb_semaphore, portMAX_DELAY);
+    ELCDIF_SetNextBufferAddr(APP_ELCDIF, next_buffer);
+    
+    while(!(APP_ELCDIF->CUR_BUF == next_buffer && APP_ELCDIF->NEXT_BUF == next_buffer));
 }
 
 void APP_ELCDIF_Init(void)
